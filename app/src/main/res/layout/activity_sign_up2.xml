@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   xmlns:tools="http://schemas.android.com/tools"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="match_parent"
+                                                   android:orientation="vertical"
+                                                   tools:context=".Registro_Usuario"
+                                                   android:background="@drawable/fondo5">
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="407dp"
+            android:layout_height="280dp"
+            android:id="@+id/linearLayout4" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="200dp"
+            app:layout_constraintBottom_toTopOf="@+id/btn_registrar_1" android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp" app:layout_constraintVertical_bias="0.428"
+    >
+        <TextView
+                android:id="@+id/textView26"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Usuario:"
+                android:textSize="24sp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="5dp"/>
+        <EditText
+                android:id="@+id/txt_usuario1"
+                android:layout_width="match_parent"
+                android:ems="10"
+                android:hint=" Ingrese usuario"
+                android:inputType="textPersonName"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/edt_style"
+                android:layout_height="43dp"
+                android:layout_marginBottom="10dp"
+                android:drawableLeft="@drawable/ic_baseline_person_24"
+                android:maxLength="15"
+                android:textSize="24sp"/>
+        <TextView
+                android:id="@+id/textView29"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Contraseña:"
+                android:textSize="24sp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="5dp"
+        />
+        <EditText
+                android:id="@+id/txt_contra_1"
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/edt_style"
+                android:ems="10"
+                android:hint=" Ingrese contraseña"
+                android:inputType="textPassword"
+                android:layout_marginBottom="10dp"
+                android:maxLength="15"
+                android:drawableLeft="@drawable/contra1" android:textSize="24sp"/>
+        <TextView
+                android:id="@+id/textView30"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Repetir Contraseña:"
+                android:textSize="24sp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="5dp"/>
+        <EditText
+                android:id="@+id/txt_rep_1"
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="30dp"
+                android:background="@drawable/edt_style"
+                android:drawableLeft="@drawable/llave"
+                android:drawablePadding="10dp"
+                android:hint="Repita contraseña"
+                android:inputType="textPassword"
+                android:maxLength="15"
+
+                android:textSize="24sp"/>
+    </LinearLayout>
+    <Button
+            android:id="@+id/btn_registrar_1"
+            android:layout_width="243dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/borde_redondo"
+            android:text="Registrar"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.803"
+            android:layout_marginTop="300dp" android:layout_marginBottom="50dp" android:layout_marginStart="80dp"
+            android:layout_marginEnd="80dp" app:layout_constraintHorizontal_bias="0.372"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

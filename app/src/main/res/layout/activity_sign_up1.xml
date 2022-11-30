@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Registro_Persona">
+
+
+    <TextView
+        android:id="@+id/lbl_registrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="20dp"
+        android:text="REGISTRARSE"
+        android:textColor="@color/verde_odiseum"
+        android:textSize="50dp"
+        tools:fontFamily="monospace" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="135dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp"
+
+        android:src="@drawable/icons_users_sign_up" />
+    <EditText
+            android:id="@+id/txt_cedula"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="15dp"
+            android:inputType="number"
+            android:background="@drawable/edt_style"
+            android:drawableLeft="@drawable/llave"
+            android:drawablePadding="10dp"
+            android:ems="10"
+            android:hint="Cedula"
+            android:maxLength="10"/>
+
+    <EditText
+        android:id="@+id/txt_nombre"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/edt_style"
+        android:drawableLeft="@drawable/ic_baseline_person_24"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="@string/hint_txt_nombre"
+        android:inputType="textPersonName"
+        android:maxLength="70"/>
+
+    <EditText
+        android:id="@+id/txt_apellido"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp"
+
+        android:background="@drawable/edt_style"
+        android:drawableLeft="@drawable/ic_baseline_person_24"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="@string/hint_txt_apellido"
+        android:maxLength="70"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/txt_direccion"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/edt_style"
+        android:drawableLeft="@drawable/dire"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="@string/direccion"
+        android:inputType="textPersonName"
+        android:maxLength="70"/>
+
+    <EditText
+        android:id="@+id/txt_telefono"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/edt_style"
+        android:drawableLeft="@drawable/telefono"
+        android:drawablePadding="10dp"
+        android:ems="10"
+        android:hint="@string/telefono"
+        android:maxLength="10"
+        android:inputType="number"/>
+
+
+    <EditText
+        android:id="@+id/txt_gmail"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/edt_style"
+        android:drawableLeft="@drawable/gmail_new"
+        android:drawablePadding="10dp"
+        android:ems="70"
+        android:hint="Gmail"
+        android:inputType="textEmailAddress"
+        android:maxLength="70"/>
+
+    <Button
+
+        android:id="@+id/btn_registrar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/borde_redondo"
+        android:text="SIGUIENTE"
+        android:textColor="@color/white" />
+
+</LinearLayout>

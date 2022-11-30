@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+                android:id="@+id/nav_home"
+                android:title="Productos"
+                android:icon="@drawable/icon_home_store"
+                android:checked="true"
+        />
+
+        <item
+                android:id="@+id/nav_servicios"
+                android:title="Servicios"
+                android:icon="@drawable/icon_category"
+        />
+
+        <item
+                android:id="@+id/nav_carrito"
+                android:title="Carrito"
+                android:icon="@drawable/icon_shopping_car"
+        />
+
+        <item
+                android:id="@+id/nav_perfil"
+                android:title="Mi Perfil"
+                android:icon="@drawable/ic_baseline_person_24"
+        />
+    </group>
+
+    <item android:title="Compras">
+
+        <menu>
+            <group>
+
+                <item
+                        android:id="@+id/nav_compras"
+                        android:title="Compras"
+                        android:icon="@drawable/icon_shopping_bag"
+                />
+
+            </group>
+        </menu>
+
+    </item>
+
+    <item android:title="Notificaciones y Atencion al Cliente">
+
+        <menu>
+            <group>
+
+                <item
+                        android:id="@+id/nav_notificaciones"
+                        android:title="Notificaciones"
+                        android:icon="@drawable/icon_notification"
+                />
+
+                <item
+                        android:id="@+id/nav_atencionCliente"
+                        android:title="Atencion"
+                        android:icon="@drawable/icon_technical_support"
+                />
+
+            </group>
+        </menu>
+
+    </item>
+</menu>

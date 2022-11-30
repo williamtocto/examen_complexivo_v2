@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint android:id="@+id/imgFotoPerfilUsuario"/>
+        <Constraint android:layout_height="wrap_content" app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginBottom="32dp" app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintHorizontal_bias="0.843" app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_width="wrap_content" android:id="@+id/btnComprarFacturacion"
+                    app:layout_constraintTop_toBottomOf="@+id/recyclerViewFactura" android:layout_marginTop="4dp"
+                    app:layout_constraintVertical_bias="0.978"/>
+        <Constraint android:layout_height="16dp" android:layout_marginTop="16dp"
+                    android:layout_width="33dp"
+                    app:layout_constraintTop_toBottomOf="@+id/recyclerViewFactura"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginLeft="164dp" android:layout_marginStart="164dp" android:id="@+id/textView15"/>
+        <Constraint android:layout_height="wrap_content" android:layout_marginTop="15dp"
+                    app:layout_constraintBottom_toTopOf="@+id/btnComprarFacturacion" android:layout_width="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@+id/recyclerViewFactura"
+                    app:layout_constraintVertical_bias="0.0" app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginLeft="212dp" android:layout_marginStart="212dp"
+                    android:id="@+id/txtTotalPagar"/>
+        <Constraint android:layout_height="wrap_content" app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginBottom="20dp" app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintHorizontal_bias="0.175" app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_width="wrap_content" android:id="@+id/btnComprarFacturacion2"/>
+        <Constraint android:layout_height="wrap_content" app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginBottom="32dp" app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_width="wrap_content" android:id="@+id/btnCancelaracturacion2"
+                    android:layout_marginLeft="70dp"
+                    android:layout_marginStart="92dp" app:layout_constraintTop_toBottomOf="@+id/recyclerViewFactura"
+                    android:layout_marginTop="45dp" app:layout_constraintVertical_bias="0.8"
+                    app:layout_constraintEnd_toStartOf="@+id/btnComprarFacturacion"
+                    app:layout_constraintHorizontal_bias="0.0"/>
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint android:id="@id/imgFotoPerfilUsuario"/>
+    </ConstraintSet>
+
+    <Transition
+            app:constraintSetStart="@+id/start"
+            app:constraintSetEnd="@id/end"/>
+</MotionScene>

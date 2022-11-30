@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/progress_bar"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blanco_azulado"
+    tools:context=".Inicio_Login"
+
+>
+    <TextView
+            android:id="@+id/txtTotalComprasCarrito"
+            android:layout_width="match_parent"
+            android:layout_height="76dp"
+            android:background="@color/verde_odiseum"
+            android:textColor="@color/white"
+            android:textSize="30sp" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/constraintLayout">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.cardview.widget.CardView
+            android:id="@+id/cardView4"
+            android:layout_width="337dp"
+            android:layout_height="283dp"
+            app:cardCornerRadius="30dp"
+            app:cardElevation="5dp"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.622">
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="255dp"
+                android:layout_height="74dp"
+                android:layout_marginStart="42sp"
+                android:layout_marginTop="80dp"
+                android:backgroundTint="@android:color/transparent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txt_usuario_update"
+                    android:layout_width="match_parent"
+                    android:layout_height="62dp"
+                    android:backgroundTint="@android:color/transparent"
+                    android:hint="@string/hint_login_usuario"
+                    android:inputType="textPersonName" android:textColorHighlight="#009688"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="260dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="42sp"
+                android:layout_marginTop="180dp"
+                app:endIconMode="password_toggle">
+
+            <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txt_contraseña"
+                    android:layout_width="264dp"
+                    android:layout_height="70dp"
+                    android:backgroundTint="@android:color/transparent"
+                    android:hint="@string/hint_login_clave"
+                    android:inputType="textPassword"/>
+        </com.google.android.material.textfield.TextInputLayout>
+    </androidx.cardview.widget.CardView>
+    <Button
+            android:id="@+id/btn_ingresar"
+            android:layout_width="218dp"
+            android:layout_height="53dp"
+            android:elevation="100dp"
+            android:background="@drawable/borde_redondo"
+            android:fontFamily="@font/allerta"
+            android:text="Iniciar Sesion"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView4"
+            app:layout_constraintVertical_bias="0.22"/>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView5"
+        android:layout_width="116dp"
+        android:layout_height="112dp"
+        android:layout_marginTop="48dp"
+        app:cardCornerRadius="50dp"
+        app:cardElevation="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:srcCompat="@drawable/user_login"/>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+            android:id="@+id/textView8"
+            android:layout_width="215dp"
+            android:layout_height="66dp"
+            android:text="@string/title_view_login"
+            android:textSize="48sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/cardView4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView5"
+            app:layout_constraintVertical_bias="0.538" android:gravity="center_horizontal|center_vertical"
+            android:fontFamily="sans-serif-black"/>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

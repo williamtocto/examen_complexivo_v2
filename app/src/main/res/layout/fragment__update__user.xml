@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools" android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/fragment_vertical_margin"
+        android:paddingLeft="@dimen/fragment_horizontal_margin"
+        android:paddingRight="@dimen/fragment_horizontal_margin"
+        android:paddingTop="@dimen/fragment_vertical_margin" android:background="@drawable/fondo"
+        app:layoutDescription="@xml/fragment__update__user_scene">
+
+    <TextView
+            android:text="ACTUALIZAR"
+            android:layout_width="206dp"
+            android:layout_height="52dp" android:id="@+id/textView2"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginTop="136dp" android:textSize="34sp"
+            app:layout_constraintHorizontal_bias="0.497" android:textColor="@color/azul_marino"/>
+    <TextView
+            android:text="USUARIO"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/textView24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:textSize="34sp"
+            android:textColor="@color/azul_marino" android:layout_marginTop="76dp"
+            app:layout_constraintHorizontal_bias="0.498"/>
+    <androidx.constraintlayout.widget.Guideline android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                                android:id="@+id/guideline2"
+                                                android:orientation="horizontal"
+                                                app:layout_constraintGuide_percent="0.09"/>
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="338dp"
+            android:layout_height="335dp"
+            android:id="@+id/linearLayout5" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" android:layout_marginTop="20dp"
+            android:layout_marginEnd="16dp">
+        <TextView
+                android:text="USUARIO"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView41" android:textSize="20sp"/>
+        <EditText
+                android:id="@+id/username"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:hint="@string/prompt_email"
+                android:inputType="textEmailAddress"
+                android:selectAllOnFocus="true"
+                android:layout_marginTop="10dp" android:textSize="20sp"/>
+        <TextView
+                android:text="NUEVA CONTRASEÑA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView42" android:layout_marginTop="15dp"
+                android:textSize="20sp"/>
+        <EditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="66dp"
+                android:hint="@string/prompt_password"
+                android:imeActionLabel="@string/action_sign_in_short"
+                android:imeOptions="actionDone"
+                android:inputType="textPassword"
+                android:selectAllOnFocus="true"
+                android:layout_marginTop="10dp" android:textSize="20sp"/>
+        <TextView
+                android:text="REPETIR CONTRASEÑA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/textView43" android:layout_marginTop="15dp"
+                android:textSize="20sp"/>
+        <EditText
+                android:id="@+id/password2"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:hint="@string/prompt_password"
+                android:imeActionLabel="@string/action_sign_in_short"
+                android:imeOptions="actionDone"
+                android:inputType="textPassword"
+                android:selectAllOnFocus="true"
+                android:layout_marginTop="10dp" android:textSize="20sp"/>
+    </LinearLayout>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="249dp"
+            android:layout_height="46dp"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout5" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.198">
+        <Button
+                android:text="Cancelar"
+                android:layout_width="106dp"
+                android:layout_height="43dp" android:id="@+id/btn_cancelar_user"
+                android:backgroundTint="@color/celeste" android:textColor="@color/rojo_eliminar"
+        />
+        <Button
+                android:text="Guardar"
+                android:layout_width="106dp"
+                android:layout_height="43dp" android:id="@+id/btn_guardar_user"
+                android:background="@color/celeste" android:textColor="@color/primaryColor"
+                android:layout_marginStart="30dp"/>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
