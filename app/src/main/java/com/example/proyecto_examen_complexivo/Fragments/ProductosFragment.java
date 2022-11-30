@@ -6,27 +6,17 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.ContentFrameLayout;
-import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.airbnb.lottie.L;
 import com.example.proyecto_examen_complexivo.DetalleProducto;
-import com.example.proyecto_examen_complexivo.MainActivity;
-import com.example.proyecto_examen_complexivo.ProductoServicioDetalle;
-import com.example.proyecto_examen_complexivo.R;
 import com.example.proyecto_examen_complexivo.adapter.CategoriaPAdapter;
 import com.example.proyecto_examen_complexivo.adapter.ProductoAdapter;
 import com.example.proyecto_examen_complexivo.adapter.SubcategoriaPAdapter;
@@ -34,7 +24,6 @@ import com.example.proyecto_examen_complexivo.databinding.FragmentProductosBindi
 import com.example.proyecto_examen_complexivo.modelo.CategoriaP;
 import com.example.proyecto_examen_complexivo.modelo.Producto;
 import com.example.proyecto_examen_complexivo.modelo.SubcategoriaP;
-import com.example.proyecto_examen_complexivo.network.Api;
 import com.example.proyecto_examen_complexivo.network.Constantes;
 
 import java.util.ArrayList;
@@ -44,8 +33,7 @@ import java.util.stream.Collectors;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -162,8 +150,6 @@ public class ProductosFragment extends Fragment implements ProductoAdapter.Recyc
                 return false;
             }
         });
-
-
         // Inflate the layout for this fragment
         return root;
     }
@@ -222,7 +208,6 @@ public class ProductosFragment extends Fragment implements ProductoAdapter.Recyc
                 categoriaList.addAll(response.body());
                 adaptercategoria.notifyDataSetChanged();
             }
-
             @Override
             public void onFailure(Call<List<CategoriaP>> call, Throwable t) {
                 t.printStackTrace();
@@ -257,7 +242,6 @@ public class ProductosFragment extends Fragment implements ProductoAdapter.Recyc
                     listproducto.addAll(listaProductoscompleta);
                     adapter.notifyDataSetChanged();
                 }
-
                 @Override
                 public void onFailure(Call<List<Producto>> call, Throwable t) {
                     t.printStackTrace();
@@ -280,7 +264,6 @@ public class ProductosFragment extends Fragment implements ProductoAdapter.Recyc
                 listproducto.addAll(listaProductoscompleta);
                 adapter.notifyDataSetChanged();
             }
-
             @Override
             public void onFailure(Call<List<Producto>> call, Throwable t) {
                 t.printStackTrace();
