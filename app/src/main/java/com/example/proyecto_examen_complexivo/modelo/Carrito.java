@@ -179,6 +179,7 @@ public class Carrito implements Serializable {
         dbHelper.close();
     }
 
+
     public void Limpiarcarrito(Context context){
         DbHelper dbHelper = new DbHelper(context);
         String nosql = "DELETE FROM "+ Utilidades.TABLA_CARRITO;

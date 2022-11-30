@@ -117,9 +117,6 @@ public class Navegacion extends AppCompatActivity implements NavigationView.OnNa
                     getSupportActionBar().setTitle("Servicios");
                     break;
                 case R.id.nav_carrito:
-                    /*Intent carritoActi = new Intent(this, CarritoCompras.class);
-                    startActivity(carritoActi);
-                    finish();*/
                    ft.replace(R.id.contentFrame, new detalle_compras()).commit();
                     getSupportActionBar().setTitle("Carrito");
                     break;
@@ -127,6 +124,7 @@ public class Navegacion extends AppCompatActivity implements NavigationView.OnNa
                     ft.replace(R.id.contentFrame, new Fragment_UpdatePerson()).commit();
                     getSupportActionBar().setTitle("Mi Perfil");
                     break;
+
             }
             drawerLayout.closeDrawers();
         }

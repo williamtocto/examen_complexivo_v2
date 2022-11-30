@@ -1,10 +1,13 @@
 package com.example.proyecto_examen_complexivo.Fragments;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -16,6 +19,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.airbnb.lottie.LottieAnimationView;
+import com.example.proyecto_examen_complexivo.DetalleProducto;
 import com.example.proyecto_examen_complexivo.EditarProductoDetalle;
 import com.example.proyecto_examen_complexivo.R;
 import com.example.proyecto_examen_complexivo.adapter.DetallecomprasAdapter;
@@ -43,10 +48,11 @@ public class detalle_compras extends Fragment implements DetallecomprasAdapter.R
     //carrito
     private ArrayList<Carrito> listCarrito = new ArrayList<>();
     static DetallecomprasAdapter adapter;
-    private TextView txtTotalCompras;
+    public static TextView txtTotalCompras, txt_carrito_vacio;
     private Button btnComprar;
     //recyclerview
     public static RecyclerView recyclerView;
+    public static LottieAnimationView imgCarritoVacio;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -74,15 +80,11 @@ public class detalle_compras extends Fragment implements DetallecomprasAdapter.R
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
         consultarComprasCarrito();
-
     }
-
 
     public void consultarComprasCarrito(){
         Carrito carrito = new Carrito();
         listCarrito = carrito.getcomprados(detalle_compras.this.getContext());
-      //  listCarrito.clear();
-      //        adapter.notifyDataSetChanged();
     }
 
     @Override
@@ -95,26 +97,39 @@ public class detalle_compras extends Fragment implements DetallecomprasAdapter.R
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
         recyclerView.setAdapter(adapter);
         consultarComprasCarrito();
-        txtTotalCompras = binding.txtTotalComprasCarrito;
-        Carrito carrito = new Carrito();
-        listCarrito = carrito.getcomprados(detalle_compras.this.getContext());
-        double resultado = 0;
-        double suma=0;
-        for (Carrito car: listCarrito){
-            if(car.getCantidad()>1){
-                suma=car.getCantidad()*car.getPrecio_producto();
-                resultado+=suma;
-            }else{
-                resultado += car.getPrecio_producto();
-            }
-
+        txtTotalCompras = binding.txtTotalCompra;
+        // carrito vacio
+        imgCarritoVacio = binding.imgCarritoVacio;
+        imgCarritoVacio.setAnimation(R.raw.carrito_vacio);
+        imgCarritoVacio.playAnimation();
+        imgCarritoVacio.setRepeatCount(2000);
+        txt_carrito_vacio=binding.carVacio;
+        //ocultar imagen carrito vacio
+        if(listCarrito.size()>0){
+            imgCarritoVacio.setVisibility(View.INVISIBLE);
+            txt_carrito_vacio.setVisibility(View.INVISIBLE);
         }
-        txtTotalCompras.setText("$ "+resultado);
+        //calcular del precio
+        restarTotal(getContext(),txtTotalCompras,txt_carrito_vacio,imgCarritoVacio);
         btnComprar = binding.btnComprar;
         btnComprar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                abrirFragmnet();
+                if(listCarrito.size()<=0){
+                    new AlertDialog.Builder(getContext())
+                            .setIcon(R.drawable.icon_warning)
+                            .setTitle("¡Carrito Vacio!")
+                            .setMessage("No hay productos agregados")
+                            .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                }
+                            })
+                            .show();
+                }else{
+                    abrirFragmnet();
+                }
+
             }
         });
 
@@ -143,4 +158,29 @@ public class detalle_compras extends Fragment implements DetallecomprasAdapter.R
         intent.putExtra("productodetalle", producto);
         startActivity(intent);
     }
+
+    public void restarTotal(Context contex,TextView text_total,TextView txt_carrito_vacio,LottieAnimationView img){
+        double resultado = 0;
+        double suma=0;
+        Carrito carrito = new Carrito();
+        listCarrito = carrito.getcomprados(contex);
+        for (Carrito car: listCarrito){
+            if(car.getCantidad()>1){
+                suma=car.getCantidad()*car.getPrecio_producto();
+                resultado+=suma;
+            }else{
+                resultado += car.getPrecio_producto();
+            }
+
+        }
+        System.out.println(resultado+"11111111111111111111111");
+        txtTotalCompras.setText("$ "+resultado);
+        if(listCarrito.size()==0){
+            imgCarritoVacio.setVisibility(View.VISIBLE);
+            txt_carrito_vacio.setVisibility(View.VISIBLE);
+        }
+    }
+
+
+
 }

@@ -91,7 +91,6 @@ public class DetalleProducto extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (!cantidad.getText().toString().equals(stockProdcuto.getText().toString())) {
-                    System.out.println("holaaaaaaaaaaaaaaaaa");
                     sumCantidad();
                 }
             }
@@ -236,7 +235,7 @@ public class DetalleProducto extends AppCompatActivity {
             carritoActual.setId_producto(CodigoArchivo());
             carritoActual.setNombre_producto(nombreP);
             carritoActual.setPrecio_producto(productoDetalle.getPrecio());
-            carritoActual.setTipo("producto");
+            carritoActual.setTipo("Producto");
             carritoActual.setDescricpion_producto(descP);
             carritoActual.setCantidad(Integer.parseInt(cantidadCompra));
             carritoActual.setImg(imagen);

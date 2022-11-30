@@ -1,5 +1,6 @@
 package com.example.proyecto_examen_complexivo;
 
+import android.content.Context;
 import androidx.appcompat.app.AppCompatActivity;
 
 
@@ -12,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import com.airbnb.lottie.LottieAnimationView;
 import com.example.proyecto_examen_complexivo.Fragments.detalle_compras;
 import com.example.proyecto_examen_complexivo.adapter.DetallecomprasAdapter;
 import com.example.proyecto_examen_complexivo.modelo.Carrito;
@@ -29,18 +31,17 @@ public class EditarProductoDetalle extends AppCompatActivity {
     RecyclerView recyclerViewdetalle;
     DetallecomprasAdapter adapter;
     Carrito carrito = new Carrito();
+    public static Context context;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editar_producto_detalle);
         initViews();
         initValues();
-
+        context=EditarProductoDetalle.this;
         ActualizarDatos();
         EliminarDatoCarrito();
     }
-
-
     public void ActualizarDatos(){
         btnActualizar = findViewById(R.id.btnActualizarCarrito);
         btnActualizar.setOnClickListener(new View.OnClickListener() {
@@ -84,6 +85,13 @@ public class EditarProductoDetalle extends AppCompatActivity {
                 recyclerViewdetalle.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
 
+                //modificarl el totatl despues de actulizar el carrito
+                detalle_compras det = new detalle_compras();
+                TextView textView_total=detalle_compras.txtTotalCompras;
+                TextView txt_carito_vacio=detalle_compras.txt_carrito_vacio;
+                LottieAnimationView img=detalle_compras.imgCarritoVacio;
+                det.restarTotal(EditarProductoDetalle.this,textView_total,txt_carito_vacio,img);
+
             }
 
         });
@@ -106,6 +114,12 @@ public class EditarProductoDetalle extends AppCompatActivity {
                 adapter=new DetallecomprasAdapter(listCarrito,EditarProductoDetalle.this,itemClick);
                 recyclerViewdetalle.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
+                //restar el total despues de eliminar un producto
+                detalle_compras det = new detalle_compras();
+                TextView textView_total=detalle_compras.txtTotalCompras;
+                TextView txt_carito_vacio=detalle_compras.txt_carrito_vacio;
+                LottieAnimationView img=detalle_compras.imgCarritoVacio;
+                det.restarTotal(EditarProductoDetalle.this,textView_total,txt_carito_vacio,img);
             }
         });
     }
@@ -117,6 +131,7 @@ public class EditarProductoDetalle extends AppCompatActivity {
         txtDescripcion.setText(producto.getDescricpion_producto());
         txtCantidad.setText(String.valueOf(producto.getCantidad()));
         Picasso.get().load(producto.getImg()).resize(300,450).centerCrop().into(img);
+
     }
 
     private void initViews(){

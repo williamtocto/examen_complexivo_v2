@@ -50,6 +50,7 @@ public class DetallecomprasAdapter extends RecyclerView.Adapter<DetallecomprasAd
         holder.Descripcion_Producto.setText(ListaCarrito.get(position).getDescricpion_producto());
         holder.Precio_Producto.setText(String.valueOf(ListaCarrito.get(position).getPrecio_producto()));
         holder.Cantidad_Producto.setText(String.valueOf(ListaCarrito.get(position).getCantidad()));
+        System.out.println(ListaCarrito.get(position).getTipo()+"99999999999999999999");
         holder.tipo.setText(String.valueOf(ListaCarrito.get(position).getTipo()));
         Picasso.get().load(ListaCarrito.get(position).getImg()).resize(300,450).centerCrop()
                 .into(holder.img);

@@ -98,9 +98,9 @@ public class DbHelper extends   SQLiteOpenHelper {
         bd.close();
     }
 
-/*
+
     public void eliminarCarrito(String name){
-        SQLiteDatabase bd= getWritableDatabase();
+        SQLiteDatabase bd= this.getWritableDatabase();
         String sql="";
         if (name == null) {
             sql= "DELETE FROM carrito";
@@ -118,5 +118,5 @@ public class DbHelper extends   SQLiteOpenHelper {
         SQLiteDatabase bd= this.getWritableDatabase();
         bd.execSQL("UPDATE carrito SET cantidadCompra="+cantidadCompra+" WHERE nombreProducto='"+nombre+"'");
         bd.close();
-    }*/
+    }
 }
