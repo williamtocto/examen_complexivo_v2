@@ -156,13 +156,13 @@
                         total = car.getPrecio_producto() * car.getCantidad();
                     }
                     switch (car.getTipo().toString()){
-                        case "producto":
-                            servicio.setId(3L);
+                        case "Producto":
+                            servicio.setId(1L);
                             producto.setIdproducto(car.getIdproducto());
 
                             break;
-                        case "servicio":
-                            producto.setIdproducto(4);
+                        case "Servicio":
+                            producto.setIdproducto(1);
                             servicio.setId(car.getIdproducto());
                             break;
                     }
