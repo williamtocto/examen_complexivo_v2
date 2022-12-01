@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.res.Configuration;
 import android.view.Menu;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -25,6 +26,7 @@ import com.example.proyecto_examen_complexivo.Fragments.ServiciosFragment;
 import com.example.proyecto_examen_complexivo.Fragments.detalle_compras;
 import com.example.proyecto_examen_complexivo.datos_sqlite.CargarUsuario;
 import com.google.android.material.navigation.NavigationView;
+import com.squareup.picasso.Picasso;
 
 import java.sql.SQLOutput;
 
@@ -65,11 +67,14 @@ public class Navegacion extends AppCompatActivity implements NavigationView.OnNa
             NavigationView navigationView = findViewById(R.id.nav_view_bar);
             View header = navigationView.getHeaderView(0);
             TextView textUsername = header.findViewById(R.id.nombre_usuario);
-
+            ImageView img = header.findViewById(R.id.imgFotoPerfil);
             //Consulta base de datos sqlite
            CargarUsuario usu = new CargarUsuario(Navegacion.this);
             if (usu.listarUsuarioP()!=null){
                 textUsername.setText(usu.listarUsuarioP().get(0).getIdpersona().getNombre()+" " +usu.listarUsuarioP().get(0).getIdpersona().getApellido());
+                //dato quemado
+                Picasso.get().load("https://www.labsaenzrenauld.com/wp-content/uploads/2020/10/Perfil-hombre-básico_738242395.jpg").resize(300,450).centerCrop()
+                        .into(img);
             }
 
         }

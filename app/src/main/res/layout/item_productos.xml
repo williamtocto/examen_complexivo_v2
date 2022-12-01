@@ -1,76 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    >
-
-    <androidx.cardview.widget.CardView
+    android:layout_margin="10dp"
+    app:cardCornerRadius="20dp"
+    app:cardElevation="10dp"
+    app:cardUseCompatPadding="true"
+    app:cardBackgroundColor="@color/blanco_azulado">
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="4dp"
+        android:gravity="center"
+        android:orientation="vertical">
 
-        >
-
+        <ImageView
+            android:id="@+id/imagenproducto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
+            android:background="@color/rosa"
+            android:gravity="start"
             android:orientation="vertical">
 
-            <ImageView
-                    android:id="@+id/imagenproducto"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                   />
             <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/rosa"
-                    android:gravity="start"
-                    android:orientation="vertical">
-
-                <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_width="match_parent"
-                        android:layout_height="37dp" android:background="@color/gris" android:gravity="center">
-                    <TextView
-                            android:id="@+id/precioproducto"
-                            android:layout_width="78dp"
-                            android:layout_height="wrap_content"
-                            android:gravity="center|center_horizontal"
-                            android:layout_margin="9dp"
-                            android:layout_marginRight="7dp"
-                            android:text="$"
-                            android:textColor="@color/blanco_azulado"
-                            android:textSize="16sp"
-                            android:fontFamily="serif"
-                            android:textStyle="bold"/>
-                </LinearLayout>
-
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="37dp" android:background="@color/gris" android:gravity="center">
                 <TextView
-                        android:id="@+id/nombreproducto"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="left"
-                        android:text="TITULO"
-                        android:layout_marginRight="10dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_margin="9dp"
-                        android:textColor="@color/white"
-                        android:textSize="18sp"
-                        android:justificationMode="inter_word"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        android:textStyle="bold" android:fontFamily="sans-serif-condensed"
-                        app:autoSizeTextType="uniform"/>
-
+                    android:id="@+id/precioproducto"
+                    android:layout_width="78dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center|center_horizontal"
+                    android:layout_margin="9dp"
+                    android:layout_marginRight="7dp"
+                    android:text="$"
+                    android:textColor="@color/blanco_azulado"
+                    android:textSize="16sp"
+                    android:fontFamily="serif"
+                    android:textStyle="bold"/>
             </LinearLayout>
+
+            <TextView
+                android:id="@+id/nombreproducto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="TITULO"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_margin="9dp"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:justificationMode="inter_word"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textStyle="bold" android:fontFamily="sans-serif-condensed"
+                app:autoSizeTextType="uniform"/>
 
         </LinearLayout>
 
-    </androidx.cardview.widget.CardView>
-</RelativeLayout>
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

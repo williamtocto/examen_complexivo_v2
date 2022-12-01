@@ -90,15 +90,21 @@
                     android:layout_width="207dp"
                     android:layout_height="82dp"
                     android:background="@color/azul_brillante" android:layout_marginStart="8dp">
+
                 <Button
-                        android:text="Comprar"
-                        android:layout_width="match_parent"
-                        android:layout_height="82dp" android:id="@+id/btnComprar"
-                        android:layout_weight="1"
-                        android:backgroundTint="@color/azul_brillante" android:drawableLeft="@drawable/icon_get_cash_"
-                        android:textAlignment="center" android:textSize="16sp"
-                        android:textColor="@color/blaco_arena" android:layout_marginTop="1dp"
-                        style="@style/Widget.AppCompat.Button.Borderless.Colored" android:textStyle="bold"/>
+                    android:id="@+id/btnComprar"
+                    style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                    android:layout_width="match_parent"
+                    android:layout_height="82dp"
+                    android:layout_marginTop="1dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/azul_brillante"
+                    android:drawableLeft="@drawable/icon_get_cash_"
+                    android:text="Comprar"
+                    android:textAlignment="center"
+                    android:textColor="@color/blaco_arena"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
             </LinearLayout>
         </LinearLayout>
         <LinearLayout

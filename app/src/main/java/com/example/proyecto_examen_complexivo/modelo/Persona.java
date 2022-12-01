@@ -33,6 +33,7 @@ public class Persona {
     @Expose
     private String direccion;
 
+
     public Persona(int idpersona) {
         this.idpersona = idpersona;
     }
@@ -47,7 +48,10 @@ public class Persona {
         this.celular = celular;
         this.correo = correo;
         this.direccion = direccion;
+
     }
+
+
 
     public int getIdpersona() {
         return idpersona;
@@ -105,6 +109,7 @@ public class Persona {
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
+
 
 
     public Persona getpersona(Context context){
