@@ -54,6 +54,7 @@ public class ServicioDetalle extends AppCompatActivity {
                     carritoActual.setPrecio_producto(Double.parseDouble(detalleServicio.getPrecio()));
                     carritoActual.setDescricpion_producto(detalleServicio.getDescripcion());
                     carritoActual.setTotal_precio(Double.parseDouble(detalleServicio.getPrecio()));
+                    carritoActual.setIdproducto(detalleServicio.getId());
                     carritoActual.Guardar(ServicioDetalle.this);
                     finish();
                 }
