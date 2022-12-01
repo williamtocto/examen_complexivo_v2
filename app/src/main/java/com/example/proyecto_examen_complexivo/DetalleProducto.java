@@ -13,12 +13,17 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import androidx.recyclerview.widget.RecyclerView;
+import com.airbnb.lottie.LottieAnimationView;
 import com.example.proyecto_examen_complexivo.Fragments.ProductosFragment;
+import com.example.proyecto_examen_complexivo.Fragments.detalle_compras;
+import com.example.proyecto_examen_complexivo.adapter.DetallecomprasAdapter;
 import com.example.proyecto_examen_complexivo.base_temp.DbHelper;
 import com.example.proyecto_examen_complexivo.modelo.Carrito;
 import com.example.proyecto_examen_complexivo.modelo.Producto;
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class DetalleProducto extends AppCompatActivity {
@@ -27,7 +32,7 @@ public class DetalleProducto extends AppCompatActivity {
     ImageView img, btn_mas, btn_menos;
     TextView nombreProdcuto, precioProdcuto, descripcionProducto, stockProdcuto;
     EditText cantidad;
-    Button btnAñadirCarrito;
+    Button btnAñadirCarrito,cancelar;
     int stock;
     String nombre, precio, descripcion;
     String image;
@@ -42,8 +47,9 @@ public class DetalleProducto extends AppCompatActivity {
         btn_menos = findViewById(R.id.btnMenosDetPro);
         cantidad = findViewById(R.id.txt_cantidadProductoDetPro);
 
-        btnAñadirCarrito = findViewById(R.id.btnAñadirCarrito);
 
+        btnAñadirCarrito = findViewById(R.id.btnAñadirCarrito);
+        cancelar = findViewById(R.id.btnCancelarCarrito);
         //Referencias UI
         toolbar = findViewById(R.id.toolBar);
 

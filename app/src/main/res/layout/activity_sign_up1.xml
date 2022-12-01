@@ -132,5 +132,10 @@
         android:background="@drawable/borde_redondo"
         android:text="SIGUIENTE"
         android:textColor="@color/white" />
+    <ProgressBar
+            style="?android:attr/progressBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/progressBar_registro_persona"/>
 
 </LinearLayout>

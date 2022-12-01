@@ -2,12 +2,9 @@ package com.example.proyecto_examen_complexivo;
 
 import android.content.Intent;
 import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.EditText;
 import com.example.proyecto_examen_complexivo.base_temp.DbHelper;
 import com.example.proyecto_examen_complexivo.modelo.Persona;
 import com.example.proyecto_examen_complexivo.modelo.Rol;
@@ -26,7 +23,7 @@ public class Registro_Usuario extends AppCompatActivity {
     private EditText usuario, contra, repetir;
     private Button btnregistra;
     boolean validar = false;
-
+    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +33,8 @@ public class Registro_Usuario extends AppCompatActivity {
         contra = findViewById(R.id.txt_contra_1);
         repetir = findViewById(R.id.txt_rep_1);
         btnregistra = findViewById(R.id.btn_registrar_1);
-
+        progressBar=findViewById(R.id.progressBAR_registro_user);
+        progressBar.setVisibility(View.GONE);
 
         btnregistra.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,9 +70,9 @@ public class Registro_Usuario extends AppCompatActivity {
             @Override
             public void onResponse(Call<Persona> call, retrofit2.Response<Persona> response) {
                 if (response.isSuccessful()) {
+                    progressBar.setVisibility(View.GONE);
                     Persona p = new Persona(response.body().getIdpersona());
                     Rol r = new Rol(1);
-
                     Usuario u = new Usuario(usuario.getText().toString(), contra.getText().toString(), p, r);
                     addUsuario(u);
                 }
@@ -88,12 +86,14 @@ public class Registro_Usuario extends AppCompatActivity {
     }
 
     public void getUser() {
+        progressBar.setVisibility(View.VISIBLE);
         usuarioService = Apis.getUsuarioService();
         Call<Usuario> call = usuarioService.getUser(usuario.getText().toString());
         call.enqueue(new Callback<Usuario>() {
             @Override
             public void onResponse(Call<Usuario> call, retrofit2.Response<Usuario> response) {
                 if (response.isSuccessful()) {
+                    progressBar.setVisibility(View.GONE);
                     Toast.makeText(Registro_Usuario.this, "Usuario ya Registrado", Toast.LENGTH_SHORT).show();
                 } else if (response.body() == null) {
                     addPersona();

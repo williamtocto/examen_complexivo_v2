@@ -16,20 +16,18 @@
     import com.example.proyecto_examen_complexivo.R;
     import com.example.proyecto_examen_complexivo.adapter.FacturacionAdapter;
     import com.example.proyecto_examen_complexivo.base_temp.DbHelper;
-    import com.example.proyecto_examen_complexivo.facturacion;
     import com.example.proyecto_examen_complexivo.modelo.*;
     import com.example.proyecto_examen_complexivo.network.Constantes;
     import retrofit2.Call;
     import retrofit2.Callback;
     import retrofit2.Response;
-    import retrofit2.Retrofit;
-
     import java.text.SimpleDateFormat;
     import java.util.ArrayList;
     import java.util.Date;
 
 
     public class FragmentFacturacion extends Fragment {
+
         ArrayList<Carrito> listCarrito;
         Button btnComprarFacturacion, btn_cancelar;
         RecyclerView recyclerView1;
@@ -62,6 +60,8 @@
             txtFechaFacturacion =  view.findViewById(R.id.txtFechaFacturacion);
             btnComprarFacturacion =  view.findViewById(R.id.btnComprarFacturacion);
             btn_cancelar= view.findViewById(R.id.btnCancelaracturacion2);
+
+
             btn_cancelar.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -126,7 +126,7 @@
     }
 
     public void crearfactura() {
-
+        System.out.println("holaaaa");
         //crea factura
         DbHelper dbhelper = new DbHelper(getContext(), "basetemp", null, 2);
         String nsql = "SELECT ud_id from usuario";

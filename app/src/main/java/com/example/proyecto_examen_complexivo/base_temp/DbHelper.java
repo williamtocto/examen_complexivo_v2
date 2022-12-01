@@ -54,7 +54,6 @@ public class DbHelper extends   SQLiteOpenHelper {
         if (bd!=null){
             try{
                 bd.execSQL("DELETE FROM usuario");
-                System.out.println(usuusuario+" pppppppppppppppppppppppppppp");
                 bd.execSQL("INSERT INTO usuario VALUES("+usu_id+",'"+usuusuario+"','"+usu_contrasena+"','"+cedula+"','"+nombre+"','"+apellido+"','"+direccion+"','"+telefono+"','"+correo+"','"+rol_id+"','"+persona_id+"')");
                 bd.close();
                 return true;

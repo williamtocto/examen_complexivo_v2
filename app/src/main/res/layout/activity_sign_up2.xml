@@ -100,7 +100,15 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.803"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="0.512"
             android:layout_marginTop="300dp" android:layout_marginBottom="50dp" android:layout_marginStart="80dp"
-            android:layout_marginEnd="80dp" app:layout_constraintHorizontal_bias="0.372"/>
+            android:layout_marginEnd="80dp" app:layout_constraintHorizontal_bias="0.517"/>
+    <ProgressBar
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/progressBAR_registro_user"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="36dp" app:layout_constraintTop_toBottomOf="@+id/btn_registrar_1"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.0"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
