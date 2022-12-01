@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -31,6 +32,8 @@ public class FragmentUpdateUser extends Fragment {
     Button btn_cancel, btn_save;
     boolean validar = false;
     String user_anterior;
+    private ProgressBar progressBar;
+    boolean isActive=false;
 
     View view;
 
@@ -43,6 +46,8 @@ public class FragmentUpdateUser extends Fragment {
         txt_confirm_pasword = view.findViewById(R.id.password2);
         btn_cancel = (Button) view.findViewById(R.id.btn_cancelar_user);
         btn_save = (Button) view.findViewById(R.id.btn_guardar_user);
+        progressBar=view.findViewById(R.id.progressBar_update_user);
+        progressBar.setVisibility(View.GONE);
 
         CargarUsuario usu = new CargarUsuario(getContext());
         if (usu.listarUsuarioP() != null) {
@@ -84,6 +89,7 @@ public class FragmentUpdateUser extends Fragment {
                     } else {
                         validar = true;
                         Toast.makeText(getContext(), "La contraseñas no coinciden", Toast.LENGTH_LONG).show();
+                        progressBar.setVisibility(View.GONE);
                     }
                 }
 
@@ -98,12 +104,14 @@ public class FragmentUpdateUser extends Fragment {
     UsuarioService usuarioService;
 
     public void getUser() {
+        progressBar.setVisibility(View.VISIBLE);
         usuarioService = Apis.getUsuarioService();
         Call<Usuario> call = usuarioService.getUser(txtUser.getText().toString());
         call.enqueue(new Callback<Usuario>() {
             @Override
             public void onResponse(Call<Usuario> call, retrofit2.Response<Usuario> response) {
                 if (response.isSuccessful()) {
+                    progressBar.setVisibility(View.GONE);
                     Toast.makeText(getContext(), "Usuario ya Registrado", Toast.LENGTH_SHORT).show();
                 } else if (response.body() == null) {
                     CargarUsuario usu = new CargarUsuario(getContext());
@@ -120,12 +128,14 @@ public class FragmentUpdateUser extends Fragment {
                     u.setUsuusuario(txtUser.getText().toString());
                     u.setUsu_contrasena(txt_password.getText().toString());
                     updateUsuario(usu.listarUsuarioP().get(0).getUsu_id(), u);
+                    progressBar.setVisibility(View.GONE);
                 }
             }
 
             @Override
             public void onFailure(Call<Usuario> call, Throwable t) {
                 Toast.makeText(getContext(), "Error al agregar usuario", Toast.LENGTH_SHORT).show();
+                progressBar.setVisibility(View.GONE);
             }
         });
 
@@ -145,7 +155,9 @@ public class FragmentUpdateUser extends Fragment {
                     System.out.println(usuario1.getUsuusuario());
                     bd.editarUsuario(usuario1.getUsuusuario(), usuario1.getUsu_contrasena(), user_anterior);
                     Toast.makeText(getContext(), "Usuario Actualizado", Toast.LENGTH_LONG).show();
+                    progressBar.setVisibility(View.GONE);
                 } else {
+                    progressBar.setVisibility(View.GONE);
                     Toast.makeText(getContext(), response.message(), Toast.LENGTH_LONG).show();
                 }
             }
@@ -153,6 +165,7 @@ public class FragmentUpdateUser extends Fragment {
             @Override
             public void onFailure(Call<Usuario> call, Throwable t) {
                 Toast.makeText(getContext(), t.getMessage(), Toast.LENGTH_LONG).show();
+                progressBar.setVisibility(View.GONE);
             }
 
         });
@@ -163,6 +176,7 @@ public class FragmentUpdateUser extends Fragment {
     Dialog confirm_password_dialog;
 
     public void confirm_password() {
+
         boolean bandera = false;
         CargarUsuario use = new CargarUsuario(getContext());
         EditText editTextPassword;
@@ -179,14 +193,15 @@ public class FragmentUpdateUser extends Fragment {
         confirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (use.listarUsuarioP().get(0).getUsu_contrasena().equals(editTextPassword.getText().toString())) {
 
+                if (use.listarUsuarioP().get(0).getUsu_contrasena().equals(editTextPassword.getText().toString())) {
 
                     new AlertDialog.Builder(getContext()).setIcon(R.drawable.icon_warning).setTitle("Advertencia").setMessage("¿Esta seguro de Cambiar los datos?")
                             //Boton de Si (Se supone: El Usurio es consiente de lo que esta haciendo)
                             .setPositiveButton("Si", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialogInterface, int i) {
+                                    progressBar.setVisibility(View.VISIBLE);
                                     getUser();
                                     confirm_password_dialog.dismiss();
                                 }
@@ -211,5 +226,10 @@ public class FragmentUpdateUser extends Fragment {
         });
 
 
+
     }
+
+
+
+
 }

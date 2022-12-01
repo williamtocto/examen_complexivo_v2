@@ -7,19 +7,41 @@
         <entry key="..\:/Curso2/Proyecto_Examen_Complexivo/app/src/main/res/layout/activity_detalle_producto.xml" value="0.1" />
         <entry key="..\:/Curso2/Proyecto_Examen_Complexivo/app/src/main/res/layout/activity_editar_producto_detalle.xml" value="0.1" />
         <entry key="..\:/Curso2/Proyecto_Examen_Complexivo/app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="..\:/Curso2/Proyecto_Examen_Complexivo/app/src/main/res/layout/activity_main.xml" value="0.12092391304347826" />
+        <entry key="..\:/Curso2/Proyecto_Examen_Complexivo/app/src/main/res/layout/activity_navegacion.xml" value="0.12092391304347826" />
+        <entry key="..\:/Curso2/Proyecto_Examen_Complexivo/app/src/main/res/layout/activity_pantalla_inicio.xml" value="0.12092391304347826" />
         <entry key="..\:/Curso2/Proyecto_Examen_Complexivo/app/src/main/res/layout/activity_producto_servicio_detalle.xml" value="0.1" />
+        <entry key="..\:/Curso2/Proyecto_Examen_Complexivo/app/src/main/res/layout/activity_servicio_detalle.xml" value="0.12092391304347826" />
         <entry key="..\:/Curso2/Proyecto_Examen_Complexivo/app/src/main/res/layout/activity_sign_up1.xml" value="0.1" />
+        <entry key="..\:/Curso2/Proyecto_Examen_Complexivo/app/src/main/res/layout/activity_sign_up2.xml" value="0.12092391304347826" />
+        <entry key="..\:/Curso2/Proyecto_Examen_Complexivo/app/src/main/res/layout/activity_splash_scream.xml" value="0.12092391304347826" />
+        <entry key="..\:/Curso2/Proyecto_Examen_Complexivo/app/src/main/res/layout/dialog_confirm_password.xml" value="0.1" />
+        <entry key="..\:/Curso2/Proyecto_Examen_Complexivo/app/src/main/res/layout/fragment__update__user.xml" value="0.25" />
+        <entry key="..\:/Curso2/Proyecto_Examen_Complexivo/app/src/main/res/layout/fragment_datos_pago_ejemplo.xml" value="0.14583333333333334" />
         <entry key="..\:/Curso2/Proyecto_Examen_Complexivo/app/src/main/res/layout/fragment_detalle_compras.xml" value="0.18" />
+        <entry key="..\:/Curso2/Proyecto_Examen_Complexivo/app/src/main/res/layout/fragment_facturacion.xml" value="0.1" />
         <entry key="..\:/Curso2/Proyecto_Examen_Complexivo/app/src/main/res/layout/fragment_productos.xml" value="0.1" />
         <entry key="..\:/Curso2/Proyecto_Examen_Complexivo/app/src/main/res/layout/fragment_servicios.xml" value="0.1" />
+        <entry key="..\:/Curso2/Proyecto_Examen_Complexivo/app/src/main/res/layout/fragment_update_person.xml" value="0.14583333333333334" />
+        <entry key="..\:/Curso2/Proyecto_Examen_Complexivo/app/src/main/res/layout/header_nav.xml" value="0.14583333333333334" />
         <entry key="..\:/Curso2/Proyecto_Examen_Complexivo/app/src/main/res/layout/item_carrito.xml" value="0.13677536231884058" />
-        <entry key="..\:/Curso2/Proyecto_Examen_Complexivo/app/src/main/res/layout/item_detalle_compras.xml" value="0.75" />
+        <entry key="..\:/Curso2/Proyecto_Examen_Complexivo/app/src/main/res/layout/item_categoria.xml" value="0.14583333333333334" />
+        <entry key="..\:/Curso2/Proyecto_Examen_Complexivo/app/src/main/res/layout/item_detalle_compras.xml" value="0.4950911640953717" />
         <entry key="..\:/Curso2/Proyecto_Examen_Complexivo/app/src/main/res/layout/item_productos.xml" value="0.1" />
+        <entry key="..\:/Curso2/Proyecto_Examen_Complexivo/app/src/main/res/layout/item_productos_facturacion.xml" value="0.14583333333333334" />
+        <entry key="..\:/Curso2/Proyecto_Examen_Complexivo/app/src/main/res/layout/item_servicio.xml" value="0.14583333333333334" />
+        <entry key="..\:/Curso2/Proyecto_Examen_Complexivo/app/src/main/res/layout/item_subcategoria.xml" value="0.14583333333333334" />
+        <entry key="..\:/Curso2/Proyecto_Examen_Complexivo/app/src/main/res/menu/barra_menu.xml" value="0.21296296296296297" />
+        <entry key="..\:/Curso2/Proyecto_Examen_Complexivo/app/src/main/res/menu/bottom_nav_menu.xml" value="0.2100456621004566" />
+        <entry key="..\:/Curso2/Proyecto_Examen_Complexivo/app/src/main/res/menu/search_button.xml" value="0.2100456621004566" />
       </map>
     </option>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK" />
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="corretto-11" project-jdk-type="JavaSDK" />
   <component name="ProjectType">
     <option name="id" value="jpab" />
   </component>

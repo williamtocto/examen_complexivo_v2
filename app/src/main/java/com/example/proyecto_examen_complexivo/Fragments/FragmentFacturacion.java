@@ -96,10 +96,6 @@
         String date = new SimpleDateFormat("yyyy-MM-dd").format(new Date());
         factura.setFecha_factura(date);
         txtFechaFacturacion.setText(date);
-
-
-
-
         return  view;
     }
     public void consultausuario() {
