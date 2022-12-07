@@ -27,6 +27,11 @@ public class Servicio implements Serializable {
     @Expose
     private String  descripcion;
 
+    @SerializedName("idempresa")
+    private Empresa idempresa;
+
+
+
     public Servicio() {
 
     }
@@ -37,6 +42,14 @@ public class Servicio implements Serializable {
         this.precio = precio;
         this.foto = foto;
         this.descripcion = descripcion;
+    }
+
+    public Empresa getIdempresa() {
+        return idempresa;
+    }
+
+    public void setIdempresa(Empresa idempresa) {
+        this.idempresa = idempresa;
     }
 
     public Long getId() {

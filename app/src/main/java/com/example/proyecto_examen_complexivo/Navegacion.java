@@ -44,7 +44,6 @@ public class Navegacion extends AppCompatActivity implements NavigationView.OnNa
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main);
 
-
             //Referencias UI
             drawerLayout= findViewById(R.id.contenidoPrincipal);
             navigationView= findViewById(R.id.nav_view_bar);

@@ -45,6 +45,7 @@ public class ProductoAdapter extends RecyclerView.Adapter<ProductoAdapter.ViewHo
         holder.precioproducto.setText("$ "+pro.getPrecio());
         Picasso.get().load(pro.getFoto()).resize(300,450).centerCrop()
                 .into(holder.imageView);
+        holder.empresa.setText("Empresa: "+pro.getIdempresa().getEmpnombre());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -64,13 +65,14 @@ public class ProductoAdapter extends RecyclerView.Adapter<ProductoAdapter.ViewHo
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         private ImageView imageView;
-        private TextView nombreproducto,precioproducto, id;
+        private TextView nombreproducto,precioproducto, id, empresa;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             nombreproducto=itemView.findViewById(R.id.nombreproducto);
             imageView=itemView.findViewById(R.id.imagenproducto);
             precioproducto=itemView.findViewById(R.id.precioproducto);
+            empresa=itemView.findViewById(R.id.tv_empresa);
 
         }
     }

@@ -44,8 +44,13 @@ public class ServiciosAdapter extends RecyclerView.Adapter<ServiciosAdapter.View
         Servicio ser=servicios.get(position);
         holder.txnombre.setText(ser.getNombre());
         holder.servicioprecio.setText("$ "+ser.getPrecio());
-        Picasso.get().load(ser.getFoto()).resize(300,450).centerCrop()
-                .into(holder.imageView);
+        System.out.println(ser.getFoto());
+        holder.empresa.setText("Empresa: "+ser.getIdempresa().getEmpnombre());
+        if(ser.getFoto()!=null){
+            Picasso.get().load(ser.getFoto()).resize(300,450).centerCrop()
+                    .into(holder.imageView);
+        }
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -61,12 +66,13 @@ public class ServiciosAdapter extends RecyclerView.Adapter<ServiciosAdapter.View
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         private ImageView imageView;
-        private TextView txnombre,servicioprecio;
+        private TextView txnombre,servicioprecio,empresa;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
              imageView=itemView.findViewById(R.id.iv_portada);
              txnombre=itemView.findViewById(R.id.tv_titulo);
             servicioprecio=itemView.findViewById(R.id.servicioprecio);
+            empresa=itemView.findViewById(R.id.servicio_empresa);
         }
     }
 

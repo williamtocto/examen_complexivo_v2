@@ -30,6 +30,8 @@ public class Producto  implements Serializable {
     @SerializedName("stock")
     private int stock;
 
+    @SerializedName("idempresa")
+    private Empresa idempresa;
     private Long id;
 
 
@@ -44,6 +46,14 @@ public class Producto  implements Serializable {
         this.precio = precio;
         this.foto = foto;
         this.descripcion = descripcion;
+    }
+
+    public Empresa getIdempresa() {
+        return idempresa;
+    }
+
+    public void setIdempresa(Empresa idempresa) {
+        this.idempresa = idempresa;
     }
 
     public int getStock() {
