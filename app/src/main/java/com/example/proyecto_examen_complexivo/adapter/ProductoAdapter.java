@@ -15,6 +15,7 @@ import com.example.proyecto_examen_complexivo.R;
 import com.example.proyecto_examen_complexivo.modelo.Producto;
 import com.squareup.picasso.Picasso;
 
+import java.sql.SQLOutput;
 import java.util.List;
 
 public class ProductoAdapter extends RecyclerView.Adapter<ProductoAdapter.ViewHolder>  {
@@ -41,6 +42,7 @@ public class ProductoAdapter extends RecyclerView.Adapter<ProductoAdapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull ProductoAdapter.ViewHolder holder, int position) {
         Producto pro=listproducto.get(position);
+
         holder.nombreproducto.setText(pro.getNombre());
         holder.precioproducto.setText("$ "+pro.getPrecio());
         Picasso.get().load(pro.getFoto()).resize(300,450).centerCrop()
@@ -65,7 +67,7 @@ public class ProductoAdapter extends RecyclerView.Adapter<ProductoAdapter.ViewHo
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         private ImageView imageView;
-        private TextView nombreproducto,precioproducto, id, empresa;
+        private TextView nombreproducto,precioproducto, empresa;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);

@@ -30,13 +30,14 @@ public class DetalleProducto extends AppCompatActivity {
     private Producto productoDetalle;
     Toolbar toolbar;
     ImageView img, btn_mas, btn_menos;
-    TextView nombreProdcuto, precioProdcuto, descripcionProducto, stockProdcuto;
+    TextView nombreProdcuto, precioProdcuto, descripcionProducto, stockProdcuto, empresa_info;
     EditText cantidad;
-    Button btnAñadirCarrito,cancelar;
+    Button btnAñadirCarrito, cancelar;
     int stock;
     String nombre, precio, descripcion;
     String image;
     String id_producto;
+    String empresa;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,12 +79,33 @@ public class DetalleProducto extends AppCompatActivity {
         descripcion = productoDetalle.getDescripcion();
         stock = productoDetalle.getStock();
         id_producto = CodigoArchivo();
+        empresa = productoDetalle.getIdempresa().getEmpnombre();
 
         nombreProdcuto = findViewById(R.id.productName);
         descripcionProducto = findViewById(R.id.prodDesc);
         precioProdcuto = findViewById(R.id.prodPrice);
         img = findViewById(R.id.big_image);
         stockProdcuto = findViewById(R.id.qty);
+        empresa_info = findViewById(R.id.empresa_info);
+
+        empresa_info.setText("Info_Empresa: " + empresa);
+        empresa_info.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new AlertDialog.Builder(DetalleProducto.this)
+                        .setIcon(R.drawable.icon_user_info_register)
+                        .setTitle(empresa)
+                        .setMessage("CIUDAD: "+productoDetalle.getIdempresa().getEmpciudad()+"" +
+                                "\nRAZON: "+productoDetalle.getIdempresa().getEmprazon()+
+                                "\nOBSERVACIONES: "+productoDetalle.getIdempresa().getEmpobservaciones())
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                            }
+                        })
+                        .show();
+            }
+        });
 
         nombreProdcuto.setText(nombre);
         precioProdcuto.setText(precio);

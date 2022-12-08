@@ -3,7 +3,9 @@ package com.example.proyecto_examen_complexivo.modelo;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Empresa {
+import java.io.Serializable;
+
+public class Empresa implements Serializable {
     @SerializedName("idempresa")
     @Expose
     private long idempresa;

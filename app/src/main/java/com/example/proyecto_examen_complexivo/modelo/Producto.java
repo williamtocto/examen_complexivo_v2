@@ -32,6 +32,7 @@ public class Producto  implements Serializable {
 
     @SerializedName("idempresa")
     private Empresa idempresa;
+
     private Long id;
 
 
@@ -47,6 +48,7 @@ public class Producto  implements Serializable {
         this.foto = foto;
         this.descripcion = descripcion;
     }
+
 
     public Empresa getIdempresa() {
         return idempresa;
