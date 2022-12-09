@@ -1,8 +1,8 @@
 package com.example.proyecto_examen_complexivo;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -22,7 +22,7 @@ import java.util.Random;
 
 public class ServicioDetalle extends AppCompatActivity {
     private ImageView imgDetail;
-    private TextView txtNombre, txtPrecio, txtDescripcion;
+    private TextView txtNombre, txtPrecio, txtDescripcion, txt_empresa;
     private Servicio detalleServicio;
     private Button btnGuardar;
     private DbHelper conn, db;
@@ -72,6 +72,7 @@ public class ServicioDetalle extends AppCompatActivity {
         txtDescripcion = findViewById(R.id.txtDescripcionServicio3);
         txtPrecio = findViewById(R.id.txtPrecio_Servicio3);
         btnGuardar = findViewById(R.id.btnGuardarServicioCarrito);
+        txt_empresa=findViewById(R.id.txt_empresa_info);
     }
 
     private void initValues(){
@@ -80,6 +81,24 @@ public class ServicioDetalle extends AppCompatActivity {
         txtNombre.setText(detalleServicio.getNombre());
         txtDescripcion.setText(detalleServicio.getDescripcion());
         txtPrecio.setText(String.valueOf(detalleServicio.getPrecio()));
+        txt_empresa.setText("Informacion Empresa: "+detalleServicio.getIdempresa().getEmpnombre());
+        txt_empresa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new AlertDialog.Builder(ServicioDetalle.this)
+                        .setIcon(R.drawable.icon_user_info_register)
+                        .setTitle(detalleServicio.getIdempresa().getEmpnombre())
+                        .setMessage("CIUDAD: "+detalleServicio.getIdempresa().getEmpciudad()+"" +
+                                "\nRAZON: "+detalleServicio.getIdempresa().getEmprazon()+
+                                "\nOBSERVACIONES: "+detalleServicio.getIdempresa().getEmpobservaciones())
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                            }
+                        })
+                        .show();
+            }
+        });
     }
 
     public String CodigoArchivo() {
