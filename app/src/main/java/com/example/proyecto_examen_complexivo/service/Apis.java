@@ -2,7 +2,7 @@ package com.example.proyecto_examen_complexivo.service;
 
 public class Apis {
 
-    public static final String BASE_URL = "http://10.0.2.2:8080/api/";
+    public static final String BASE_URL = "https://bryantenemea.com/api/";
 
 
     public static UsuarioService getUsuarioService() {

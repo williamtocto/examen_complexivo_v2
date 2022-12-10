@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class Constantes {
     private static Retrofit retrofit = null;
 
-    public static final String API_BASE_URL="http://10.0.2.2:8080/";
+    public static final String API_BASE_URL="https://bryantenemea.com/";
 
     public static Api getApiService(){
         if(retrofit == null){
